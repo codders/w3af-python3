@@ -22,6 +22,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 """
 import urllib.request, urllib.error, urllib.parse
 import unittest
+import httpretty
 
 from unittest.mock import patch, Mock, _Call
 
@@ -93,11 +94,16 @@ class TestCacheHandler(unittest.TestCase):
 
 
 class CacheIntegrationTest(unittest.TestCase):
+
+    @httpretty.activate(allow_net_connect=False)
     def test_cache_http_errors(self):
         settings = opener_settings.OpenerSettings()
         settings.build_openers()
         opener = settings.get_custom_opener()
 
+        httpretty.register_uri(httpretty.GET,
+            'https://w4af.readthedocs.io/foo-bar-not-exists.htm',
+            body="not found", status=404)
         url = URL('https://w4af.readthedocs.io/foo-bar-not-exists.htm')
         request = HTTPRequest(url, cache=False)
 

@@ -114,7 +114,7 @@ class TestRelativeURLRegex(unittest.TestCase):
     def test_full_url(self):
         # This is filtered by ReExtract._filter_false_urls
         matches = RELATIVE_URL_RE.findall('https://w4af.readthedocs.io/foo.html')
-        self.assertEqual(matches[0][0], '://w4af.org/foo.html')
+        self.assertEqual(matches[0][0], '://w4af.readthedocs.io/foo.html')
 
     def test_with_fake_start(self):
         matches = RELATIVE_URL_RE.findall('</abc> /def.html')
