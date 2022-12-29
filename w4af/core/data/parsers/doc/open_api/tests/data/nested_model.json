@@ -15,7 +15,7 @@
   "host": "w4af.readthedocs.io",
   "basePath": "/api",
   "schemes": [
-    "http"
+    "https"
   ],
   "consumes": [
     "application/json"

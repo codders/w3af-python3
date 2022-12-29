@@ -101,7 +101,7 @@ class TestURLParser(unittest.TestCase):
 
     def test_url_in_qs(self):
         u = URL('https://w4af.readthedocs.io/?foo=http://w4af.com')
-        self.assertEqual(u.netloc, 'w4af.org')
+        self.assertEqual(u.netloc, 'w4af.readthedocs.io')
 
     def test_url_in_filename(self):
         """
@@ -129,7 +129,7 @@ class TestURLParser(unittest.TestCase):
             fixed_url = urlparse.urljoin(base_url, self.get_path_qs())
         """
         u = URL('https://w4af.readthedocs.io/foo-http://external-test.com/.zip')
-        self.assertEqual(u.netloc, 'w4af.org')
+        self.assertEqual(u.netloc, 'w4af.readthedocs.io')
 
     def test_invalid_encoding(self):
         self.assertRaises(ValueError, URL, 'https://w4af.readthedocs.io/', encoding='x-euc-jp')
