@@ -12,10 +12,10 @@
       "name": "MIT"
     }
   },
-  "host": "w3af.org",
+  "host": "w4af.readthedocs.io",
   "basePath": "/api",
   "schemes": [
-    "http"
+    "https"
   ],
   "consumes": [
     "application/json"

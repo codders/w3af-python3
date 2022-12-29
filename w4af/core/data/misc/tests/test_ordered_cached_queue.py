@@ -119,13 +119,16 @@ class TestOrderedCachedQueue(unittest.TestCase):
         self.assertEqual(len(q.memory), 2)
         self.assertEqual(len(q.disk), 1)
 
-        # Get all
-        self.assertEqual(read_fuzzable_request_parameter(q.get()), 1)
+        # Get all - This depends on correctly guessing how the items
+        # will be ordered when they are added to the queue. This order
+        # is determined by hashing the request, so it is not expected
+        # to be sequential on request_id
+        self.assertEqual(read_fuzzable_request_parameter(q.get()), 2)
 
         self.assertEqual(len(q.memory), 1)
         self.assertEqual(len(q.disk), 1)
 
-        self.assertEqual(read_fuzzable_request_parameter(q.get()), 2)
+        self.assertEqual(read_fuzzable_request_parameter(q.get()), 1)
 
         self.assertEqual(len(q.memory), 0)
         self.assertEqual(len(q.disk), 1)
