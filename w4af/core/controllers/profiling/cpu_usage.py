@@ -3,7 +3,7 @@ cpu_usage.py
 
 Copyright 2012 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -31,7 +31,7 @@ SAVE_THREAD_PTR = []
 
 
 def user_wants_cpu_profiling():
-    _should_profile = os.environ.get('W3AF_CPU_PROFILING', '0')
+    _should_profile = os.environ.get('W4AF_CPU_PROFILING', '0')
 
     if _should_profile.isdigit() and int(_should_profile) == 1:
         return True
@@ -50,7 +50,7 @@ def should_profile_cpu(wrapped):
 @should_profile_cpu
 def start_cpu_profiling():
     """
-    If the environment variable W3AF_PROFILING is set to 1, then we start
+    If the environment variable W4AF_PROFILING is set to 1, then we start
     the CPU and memory profiling.
 
     :return: None

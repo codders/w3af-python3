@@ -4,7 +4,7 @@ test_webspider.py
 
 Copyright 2012 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -148,7 +148,7 @@ class TestWebSpider(PluginTest):
         #
         #    FIXME: At some point this should be reduced to an empty set()
         #
-        W3AF_FAILS = {'9_16ee31.php', '9_9ee31.php', '9_18ee31.php',
+        W4AF_FAILS = {'9_16ee31.php', '9_9ee31.php', '9_18ee31.php',
                       '9_11ee31.php', '9_20ee31.php', '9_25ee31.php',
                       '9_15ee31.php', '9_8ee31.php', '9_17ee31.php',
                       '9_13ee31.php', '9_19ee31.php', '9_14ee31.php',
@@ -166,7 +166,7 @@ class TestWebSpider(PluginTest):
                       '19_1f52a.php'
                     }
 
-        EXPECTED_URLS = ALL_WIVET_URLS - W3AF_FAILS
+        EXPECTED_URLS = ALL_WIVET_URLS - W4AF_FAILS
 
         inner_pages = 'innerpages/'
 

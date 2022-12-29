@@ -2,7 +2,7 @@
 """
 Copyright 2012 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -45,6 +45,7 @@ class TestHistoryItem(unittest.TestCase):
     def setUp(self):
         kb.kb.cleanup()
         create_temp_dir()
+        HistoryItem().clear()
         HistoryItem().init()
 
     def tearDown(self):
@@ -59,7 +60,7 @@ class TestHistoryItem(unittest.TestCase):
 
     def test_find(self):
         find_id = random.randint(1, 499)
-        url = URL('http://w4af.org/a/b/foobar.php?foo=123')
+        url = URL('https://w4af.readthedocs.io/a/b/foobar.php?foo=123')
         tag_value = rand_alnum(10)
 
         for i in range(0, 500):
@@ -94,7 +95,7 @@ class TestHistoryItem(unittest.TestCase):
 
     def test_mark(self):
         mark_id = 3
-        url = URL('http://w4af.org/a/b/c.php')
+        url = URL('https://w4af.readthedocs.io/a/b/c.php')
         
         for i in range(0, 500):
             request = HTTPRequest(url, data='a=1')
@@ -148,7 +149,7 @@ class TestHistoryItem(unittest.TestCase):
         headers = Headers([('Content-Type', 'text/html')])
         body = '<html>' + LOREM * 20
 
-        for i in range(1, force_compression_count):
+        for i in range(1, force_compression_count + 1):
             request = HTTPRequest(url, data='a=%s' % i)
 
             response = HTTPResponse(200, body, headers, url, url)
@@ -250,7 +251,7 @@ class TestHistoryItem(unittest.TestCase):
     def test_tag(self):
         tag_id = random.randint(501, 999)
         tag_value = rand_alnum(10)
-        url = URL('http://w4af.org/a/b/c.php')
+        url = URL('https://w4af.readthedocs.io/a/b/c.php')
 
         for i in range(501, 1000):
             request = HTTPRequest(url, data='a=1')

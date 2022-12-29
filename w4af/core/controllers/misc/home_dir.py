@@ -3,7 +3,7 @@ home_dir.py
 
 Copyright 2008 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ HOME_DIR = os.path.join(os.path.expanduser('~'), '.w4af')
 
 # Point to the directory where w4af_console , w4af_gui and profiles/ live
 # Also, the root of the git repository
-W3AF_LOCAL_PATH = os.sep.join(__file__.split(os.sep)[:-5]) + os.path.sep
+W4AF_LOCAL_PATH = os.sep.join(__file__.split(os.sep)[:-5]) + os.path.sep
 
 
 def create_home_dir():
@@ -70,7 +70,7 @@ def create_home_dir():
 
     # I need to check in two different paths to support installing w4af as
     # a module. Note the gen_data_files.py code in the w4af-module.
-    default_profiles_paths = [os.path.join(W3AF_LOCAL_PATH, 'profiles'),
+    default_profiles_paths = [os.path.join(W4AF_LOCAL_PATH, 'profiles'),
                               os.path.join(ROOT_PATH, 'profiles'),
                               os.path.join(ROOT_PATH, '../profiles'),
                               os.path.join(sys.prefix, 'profiles'),
@@ -101,7 +101,7 @@ def get_home_dir():
     :return: The location of the w4af directory inside the home directory of
         the current user.
     """
-    return os.environ.get('W3AF_HOME_DIR', HOME_DIR)
+    return os.environ.get('W4AF_HOME_DIR', HOME_DIR)
 
 
 def verify_dir_has_perm(path, perm, levels=0):

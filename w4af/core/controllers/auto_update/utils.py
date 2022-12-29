@@ -3,7 +3,7 @@ utils.py
 
 Copyright 2013 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 import git
 import time
 
-from w4af.core.controllers.misc.home_dir import W3AF_LOCAL_PATH
+from w4af.core.controllers.misc.home_dir import W4AF_LOCAL_PATH
 
 DETACHED_HEAD = 'detached HEAD'
 
@@ -30,7 +30,7 @@ def to_short_id(commit_id):
     return commit_id[:10]
 
 
-def is_git_repo(path=W3AF_LOCAL_PATH):
+def is_git_repo(path=W4AF_LOCAL_PATH):
     """
     Test whether current's w4af directory is a GIT repository.
     """
@@ -42,7 +42,7 @@ def is_git_repo(path=W3AF_LOCAL_PATH):
         return True
 
 
-def is_dirty_repo(path=W3AF_LOCAL_PATH):
+def is_dirty_repo(path=W4AF_LOCAL_PATH):
     """
     :return: True if the repository is dirty (contains local changes)
     """
@@ -54,14 +54,14 @@ def is_dirty_repo(path=W3AF_LOCAL_PATH):
         return repo.is_dirty()
 
 
-def get_latest_commit(path=W3AF_LOCAL_PATH):
+def get_latest_commit(path=W4AF_LOCAL_PATH):
     """
     :return: A string (hex sha) that identifies the commit
     """
     return git.Repo(path).head.commit.hexsha
 
 
-def get_commit_id_date(commit_id, path=W3AF_LOCAL_PATH):
+def get_commit_id_date(commit_id, path=W4AF_LOCAL_PATH):
     """
     :return: The date for the @commit_id
     """
@@ -75,7 +75,7 @@ def get_commit_id_date(commit_id, path=W3AF_LOCAL_PATH):
     return None
 
 
-def get_latest_commit_date(path=W3AF_LOCAL_PATH):
+def get_latest_commit_date(path=W4AF_LOCAL_PATH):
     """
     :return: The date for the latest commit
     """
@@ -83,7 +83,7 @@ def get_latest_commit_date(path=W3AF_LOCAL_PATH):
     return time.strftime("%d %b %Y %H:%M", time.gmtime(cdate)) 
 
 
-def get_current_branch(path=W3AF_LOCAL_PATH):
+def get_current_branch(path=W4AF_LOCAL_PATH):
     """
     :return: The active branch for the repo at "path".
     """
@@ -99,7 +99,7 @@ def get_current_branch(path=W3AF_LOCAL_PATH):
     return name
 
 
-def repo_has_conflicts(path=W3AF_LOCAL_PATH):
+def repo_has_conflicts(path=W4AF_LOCAL_PATH):
     """
     :return: True if there was any merge conflict with the last pull()
     """

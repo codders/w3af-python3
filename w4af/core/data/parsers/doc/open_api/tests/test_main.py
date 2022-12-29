@@ -4,7 +4,7 @@ test_main.py
 
 Copyright 2018 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -156,7 +156,7 @@ class TestOpenAPIMain(unittest.TestCase):
         #
         api_call = api_calls[0]
 
-        e_url = 'http://w4af.org/api/cats'
+        e_url = 'https://w4af.readthedocs.io/api/cats'
         e_force_fuzzing_headers = ['X-Awesome-Header', 'X-Foo-Header']
         e_headers = Headers([
             ('X-Awesome-Header', '2018'),
@@ -173,7 +173,7 @@ class TestOpenAPIMain(unittest.TestCase):
         #
         api_call = api_calls[1]
 
-        e_url = 'http://w4af.org/api/cats?limit=42'
+        e_url = 'https://w4af.readthedocs.io/api/cats?limit=42'
         e_force_fuzzing_headers = ['X-Awesome-Header', 'X-Foo-Header']
         e_headers = Headers([
             ('X-Awesome-Header', '2018'),
@@ -190,7 +190,7 @@ class TestOpenAPIMain(unittest.TestCase):
         #
         api_call = api_calls[2]
 
-        e_url = 'http://w4af.org/api/pets'
+        e_url = 'https://w4af.readthedocs.io/api/pets'
         e_force_fuzzing_headers = ['X-Bar-Header', 'X-Foo-Header']
         e_headers = Headers([
             ('X-Foo-Header', '42'),
@@ -206,7 +206,7 @@ class TestOpenAPIMain(unittest.TestCase):
         #
         api_call = api_calls[3]
 
-        e_url = 'http://w4af.org/api/pets'
+        e_url = 'https://w4af.readthedocs.io/api/pets'
         e_force_fuzzing_headers = ['X-Bar-Header', 'X-Foo-Header']
         e_headers = Headers([
             ('X-Bar-Header', '56'),
@@ -242,7 +242,7 @@ class TestOpenAPIMain(unittest.TestCase):
         #
         api_call = api_calls[1]
 
-        e_url = 'http://w4af.org/api/pets'
+        e_url = 'https://w4af.readthedocs.io/api/pets'
         e_force_fuzzing_headers = []
         e_headers = Headers([('Content-Type', 'application/vnd.w4af+json')])
         e_post_data_headers = Headers([('Content-Type', 'application/vnd.w4af+json')])
@@ -262,7 +262,7 @@ class TestOpenAPIMain(unittest.TestCase):
         #
         api_call = api_calls[0]
 
-        e_url = 'http://w4af.org/api/pets'
+        e_url = 'https://w4af.readthedocs.io/api/pets'
         e_force_fuzzing_headers = ['X-Foo-Header']
         e_headers = Headers([('Content-Type', 'application/vnd.w4af+json'), ('X-Foo-Header', '42')])
         e_post_data_headers = Headers([('Content-Type', 'application/vnd.w4af+json')])
@@ -360,7 +360,7 @@ class TestOpenAPIMain(unittest.TestCase):
         #
         api_call = api_calls[0]
 
-        e_url = 'http://w4af.org/api/cats'
+        e_url = 'https://w4af.readthedocs.io/api/cats'
         e_headers = Headers([
             ('X-Awesome-Header', '2018'),
             ('X-Foo-Header', 'foo'),
@@ -376,7 +376,7 @@ class TestOpenAPIMain(unittest.TestCase):
         #
         api_call = api_calls[1]
 
-        e_url = 'http://w4af.org/api/cats?limit=42'
+        e_url = 'https://w4af.readthedocs.io/api/cats?limit=42'
         e_headers = Headers([
             ('X-Awesome-Header', '2018'),
             ('X-Foo-Header', 'foo'),
@@ -392,7 +392,7 @@ class TestOpenAPIMain(unittest.TestCase):
         #
         api_call = api_calls[2]
 
-        e_url = 'http://w4af.org/api/pets'
+        e_url = 'https://w4af.readthedocs.io/api/pets'
         e_headers = Headers([
             ('X-Foo-Header', '42'),
             ('Content-Type', 'application/json')])
@@ -407,7 +407,7 @@ class TestOpenAPIMain(unittest.TestCase):
         #
         api_call = api_calls[3]
 
-        e_url = 'http://w4af.org/api/pets'
+        e_url = 'https://w4af.readthedocs.io/api/pets'
         e_headers = Headers([
             ('X-Bar-Header', '56'),
             ('X-Foo-Header', '42'),
@@ -438,7 +438,7 @@ class TestOpenAPIMain(unittest.TestCase):
         self.assertEqual(len(api_calls), 1)
 
         api_call = api_calls[0]
-        e_url = 'http://w4af.org/api/pets'
+        e_url = 'https://w4af.readthedocs.io/api/pets'
         e_force_fuzzing_headers = []
         e_headers = Headers([('Content-Type', 'application/json')])
         e_body = '{"pet": {"age": 42}}'

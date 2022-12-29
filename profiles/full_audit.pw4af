@@ -1,6 +1,6 @@
 [profile]
-description = Perform a manual discovery using the spider_man plugin, and afterwards scan the site for any known vulnerabilities.
-name = full_audit_spider_man
+description = This profile performs a full audit of the target website, using only the web_spider plugin for crawling.
+name = full_audit
 
 [output.console]
 verbose = False
@@ -68,11 +68,14 @@ eq_limit = 0.9
 [audit.rfi]
 listen_address = 
 listen_port = 44449
-use_w3af_site = True
+use_w4af_site = True
 
 [audit.frontpage]
 
-[crawl.spider_man]
+[crawl.web_spider]
+only_forward = False
+follow_regex = .*
+ignore_regex = 
 
 [bruteforce.basic_auth]
 users_file = %(ROOT_PATH)s/core/controllers/bruteforce/users.txt
@@ -88,6 +91,17 @@ combo_file =
 combo_separator = :
 
 [bruteforce.form_auth]
+users_file = %(ROOT_PATH)s/core/controllers/bruteforce/users.txt
+passwd_file = %(ROOT_PATH)s/core/controllers/bruteforce/passwords.txt
+use_svn_users = True
+stop_on_first = True
+pass_eq_user = True
+use_leet_password = True
+use_emails = True
+use_profiling = True
+profiling_number = 50
+combo_file =
+combo_separator = :
 
 [grep.symfony]
 override = False
@@ -119,6 +133,8 @@ override = False
 [grep.credit_cards]
 
 [grep.user_defined_regex]
+single_regex = 
+regex_file_path = 
 
 [grep.dom_xss]
 
@@ -161,6 +177,38 @@ only_target_domain = True
 
 [grep.directory_indexing]
 
+[infrastructure.favicon_identification]
+
+[infrastructure.server_header]
+
+[infrastructure.fingerprint_os]
+
+[infrastructure.find_vhosts]
+
+[infrastructure.detect_reverse_proxy]
+
+[infrastructure.afd]
+
+[infrastructure.dns_wildcard]
+
+[infrastructure.server_status]
+
+[infrastructure.http_vs_https_dist]
+httpPort = 80
+httpsPort = 443
+
+[infrastructure.detect_transparent_proxy]
+
+[infrastructure.find_jboss]
+
+[infrastructure.domain_dot]
+
+[infrastructure.fingerprint_WAF]
+
+[infrastructure.allowed_methods]
+run_once = True
+dav_only = True
+
 [misc-settings]
 fuzz_form_files = True
 fuzz_url_filenames = False
@@ -171,10 +219,11 @@ form_fuzzing_mode = tmb
 stop_on_first_exception = False
 max_discovery_time = 120
 interface = ppp0
-local_ip_address = 10.5.6.18
+local_ip_address = 10.5.6.13
 blacklist_http_request = 
 blacklist_audit =
 msf_location = /opt/metasploit3/bin/
+fuzz_cookies = False
 
 [http-settings]
 timeout = 0
@@ -190,10 +239,27 @@ cookie_jar_file =
 ignore_session_cookies = False
 proxy_port = 8080
 proxy_address = 
-user_agent = w3af.org
+user_agent = w4af.org
 max_http_retries = 2
 always_404 = 
 never_404 = 
 string_match_404 = 
 url_parameter = 
+max_file_size = 400000
+
+[output.text_file]
+
+[audit.cors_origin]
+
+[grep.xss_protection_header]
+
+[grep.cache_control]
+
+[grep.cross_domain_js]
+
+[grep.url_session]
+
+[infrastructure.php_eggs]
+
+[infrastructure.frontpage_version]
 

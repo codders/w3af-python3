@@ -3,7 +3,7 @@ gui_updater.py
 
 Copyright 2007 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 """
 from gi.repository import Gtk as gtk
 
-from w4af.core.ui.gui.constants import W3AF_ICON
+from w4af.core.ui.gui.constants import W4AF_ICON
 from w4af.core.ui.gui import entries
 
 from w4af.core.controllers.auto_update.version_manager import VersionMgr
@@ -32,7 +32,7 @@ from w4af.core.controllers.auto_update.utils import to_short_id, get_commit_id_d
 def ask(msg):
     dlg = gtk.MessageDialog(None, gtk.DIALOG_MODAL,
                             gtk.MESSAGE_QUESTION, gtk.BUTTONS_YES_NO, msg)
-    dlg.set_icon_from_file(W3AF_ICON)
+    dlg.set_icon_from_file(W4AF_ICON)
     opt = dlg.run()
     dlg.destroy()
     return opt == gtk.RESPONSE_YES
@@ -41,7 +41,7 @@ def ask(msg):
 def notify(msg):
     dlg = gtk.MessageDialog(None, gtk.DIALOG_MODAL,
                             gtk.MESSAGE_QUESTION, gtk.BUTTONS_OK, msg)
-    dlg.set_icon_from_file(W3AF_ICON)
+    dlg.set_icon_from_file(W4AF_ICON)
     dlg.run()
     dlg.destroy()
         
@@ -122,7 +122,7 @@ class GUIUpdater(UIUpdater):
             if changelog.get_changes():
 
                 dlg = entries.TextDialog("Update report",
-                                         icon=W3AF_ICON)
+                                         icon=W4AF_ICON)
                 dlg.add_message(self._generate_report(changelog,
                                                       local_commit_id,
                                                       remote_commit_id))

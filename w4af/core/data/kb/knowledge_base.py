@@ -3,7 +3,7 @@ knowledge_base.py
 
 Copyright 2006 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -460,6 +460,9 @@ class DBKnowledgeBase(BasicKnowledgeBase):
 
     def __init__(self):
         super(DBKnowledgeBase, self).__init__()
+        self._reset()
+
+    def _reset(self):
         self.initialized = False
 
         # TODO: Why doesn't this work with a WeakValueDictionary?
@@ -830,6 +833,7 @@ class DBKnowledgeBase(BasicKnowledgeBase):
         old_fuzzable_requests.cleanup()
 
         self.observers.clear()
+        self._reset()
 
     @requires_setup
     def remove(self):

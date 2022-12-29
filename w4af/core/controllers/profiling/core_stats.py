@@ -3,7 +3,7 @@ core_stats.py
 
 Copyright 2014 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -37,7 +37,7 @@ SAVE_THREAD_PTR = []
 
 
 def core_profiling_is_enabled():
-    env_value = os.environ.get('W3AF_CORE_PROFILING', '0')
+    env_value = os.environ.get('W4AF_CORE_PROFILING', '0')
 
     if env_value.isdigit() and int(env_value) == 1:
         return True
@@ -56,7 +56,7 @@ def should_profile_core(wrapped):
 @should_profile_core
 def start_core_profiling(w4af_core):
     """
-    If the environment variable W3AF_PROFILING is set to 1, then we start
+    If the environment variable W4AF_PROFILING is set to 1, then we start
     the CPU and memory profiling.
 
     :return: None

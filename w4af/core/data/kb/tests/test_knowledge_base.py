@@ -3,7 +3,7 @@ test_knowledge_base.py
 
 Copyright 2006 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -519,7 +519,7 @@ class TestKnowledgeBase(unittest.TestCase):
         :see: https://github.com/andresriancho/w3af/issues/2181
         """
         w4af_core = w4afCore()
-        target = Target(URL('http://w4af.org/'))
+        target = Target(URL('https://w4af.readthedocs.io/'))
         sqlmap_wrapper = SQLMapWrapper(target, w4af_core.uri_opener)
 
         sqlmap_shell = SQLMapShell(MockVuln(), w4af_core.uri_opener,
@@ -543,7 +543,7 @@ class TestKnowledgeBase(unittest.TestCase):
         :see: https://github.com/andresriancho/w3af/issues/2181
         """
         w4af_core = w4afCore()
-        exploit_url = URL('http://w4af.org/')
+        exploit_url = URL('https://w4af.readthedocs.io/')
 
         shell = DAVShell(MockVuln(), w4af_core.uri_opener,
                          w4af_core.worker_pool, exploit_url)
@@ -590,7 +590,7 @@ class TestKnowledgeBase(unittest.TestCase):
         :see: https://github.com/andresriancho/w3af/issues/2181
         """
         w4af_core = w4afCore()
-        exploit_url = URL('http://w4af.org/')
+        exploit_url = URL('https://w4af.readthedocs.io/')
 
         shell = FileUploadShell(MockVuln(), w4af_core.uri_opener,
                                 w4af_core.worker_pool, exploit_url)

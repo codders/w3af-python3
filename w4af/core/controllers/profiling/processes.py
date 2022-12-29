@@ -3,7 +3,7 @@ processes.py
 
 Copyright 2015 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ SAVE_PROCESS_PTR = []
 
 def should_dump_processes(wrapped):
     def inner():
-        _should_profile = os.environ.get('W3AF_PROCESSES', '0')
+        _should_profile = os.environ.get('W4AF_PROCESSES', '0')
 
         if _should_profile.isdigit() and int(_should_profile) == 1:
             return wrapped()
@@ -44,7 +44,7 @@ def should_dump_processes(wrapped):
 @should_dump_processes
 def start_process_dump():
     """
-    If the environment variable W3AF_PROCESSES is set to 1, then we start
+    If the environment variable W4AF_PROCESSES is set to 1, then we start
     the thread that will dump the sub processes created by this main thread.
 
     :return: None

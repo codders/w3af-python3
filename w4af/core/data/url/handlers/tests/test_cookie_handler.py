@@ -3,7 +3,7 @@ test_cookie_handler.py
 
 Copyright 2012 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -35,8 +35,8 @@ from w4af.core.data.url.extended_urllib import ExtendedUrllib
 
 class TestCookieHandler(unittest.TestCase):
 
-    URL_SEND_COOKIE = 'http://w4af.org/send-cookie'
-    URL_CHECK_COOKIE = 'http://w4af.org/check-cookie'
+    URL_SEND_COOKIE = 'https://w4af.readthedocs.io/send-cookie'
+    URL_CHECK_COOKIE = 'https://w4af.readthedocs.io/check-cookie'
 
     COOKIE_VALUE = 'session=123456789'
 

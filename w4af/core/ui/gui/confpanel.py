@@ -3,7 +3,7 @@ confpanel.py
 
 Copyright 2007 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ from gi.repository import Gtk as gtk
 from w4af.core.controllers.exceptions import BaseFrameworkException
 from w4af.core.controllers.plugins.plugin import Plugin
 from w4af.core.data.options.option_list import OptionList
-from w4af.core.ui.gui.constants import W3AF_ICON
+from w4af.core.ui.gui.constants import W4AF_ICON
 from w4af.core.ui.gui import entries, helpers
 
 
@@ -279,7 +279,7 @@ class ConfigDialog(gtk.Dialog):
     """
     def __init__(self, title, w4af, plugin, overwriter=None, showDesc=False):
         super(ConfigDialog, self).__init__(title, None, gtk.DIALOG_MODAL, ())
-        self.set_icon_from_file(W3AF_ICON)
+        self.set_icon_from_file(W4AF_ICON)
         if overwriter is None:
             overwriter = {}
 

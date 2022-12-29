@@ -3,7 +3,7 @@ version_manager.py
 
 Copyright 2011 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ from datetime import date
 
 import w4af.core.controllers.output_manager as om
 
-from w4af.core.controllers.misc.home_dir import W3AF_LOCAL_PATH
+from w4af.core.controllers.misc.home_dir import W4AF_LOCAL_PATH
 from w4af.core.controllers.auto_update.git_client import GitClient, GitClientError
 from w4af.core.data.db.startup_cfg import StartUpConfig
 from w4af.core.controllers.auto_update.utils import (to_short_id,
@@ -76,7 +76,7 @@ class VersionMgr(object):
     HEAD = 'HEAD'
     BACK = 'BACK'
 
-    def __init__(self, localpath=W3AF_LOCAL_PATH, log=None):
+    def __init__(self, localpath=W4AF_LOCAL_PATH, log=None):
         """
         w4af version manager class. Handles the logic concerning the
         automatic update/commit process of the code.

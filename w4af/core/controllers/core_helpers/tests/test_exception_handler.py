@@ -4,7 +4,7 @@ test_exception_handler.py
 
 Copyright 2012 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -210,7 +210,7 @@ class TestExceptionData(unittest.TestCase):
     def get_fuzzable_request(self):
         headers = Headers([('Hello', 'World')])
         post_data = KeyValueContainer(init_val=[('a', ['b'])])
-        url = URL('http://w4af.org')
+        url = URL('https://w4af.readthedocs.io/')
         return FuzzableRequest(url, method='GET', post_data=post_data,
                                headers=headers)
 

@@ -3,7 +3,7 @@ header_link_extract.py
 
 Copyright 2015 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ def extract_link_from_header_simple(http_response, header_name, header_value):
     a link.
 
     Example headers we can parse:
-        x-pingback: http://w4af.org/xmlrpc.php
+        x-pingback: https://w4af.readthedocs.io/xmlrpc.php
         location: /foo/
 
     :param http_response: The http response object
@@ -62,7 +62,7 @@ def extract_link_from_link_header(http_response, header_name, header_value):
     a "wordpress link"
 
     Example headers we can parse:
-        link: <http://w4af.org/?p=4758>; rel=shortlink
+        link: <https://w4af.readthedocs.io/?p=4758>; rel=shortlink
 
     :param http_response: The http response object
     :param header_name: The http response header name

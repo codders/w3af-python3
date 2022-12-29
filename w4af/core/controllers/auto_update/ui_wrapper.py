@@ -3,7 +3,7 @@ auto_update.py
 
 Copyright 2011 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 import os
 
 from w4af.core.controllers.misc.home_dir import (verify_dir_has_perm,
-                                                 W3AF_LOCAL_PATH)
+                                                 W4AF_LOCAL_PATH)
 from w4af.core.controllers.auto_update.version_manager import VersionMgr
 from w4af.core.controllers.auto_update.utils import is_git_repo
 
@@ -57,7 +57,7 @@ class UIUpdater(object):
 
     def update(self):
         if self._force_upd in (None, True) and is_git_repo() and \
-        verify_dir_has_perm(W3AF_LOCAL_PATH, os.W_OK, levels=1):
+        verify_dir_has_perm(W4AF_LOCAL_PATH, os.W_OK, levels=1):
             try:
                 resp = self._call_update()
                 self._handle_update_output(resp)

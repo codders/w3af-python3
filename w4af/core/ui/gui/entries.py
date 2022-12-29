@@ -3,7 +3,7 @@ entries.py
 
 Copyright 2007 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ from gi.repository import GObject as gobject
 
 from w4af.core.ui.gui import history
 from w4af.core.ui.gui import helpers
-from w4af.core.ui.gui.constants import W3AF_ICON
+from w4af.core.ui.gui.constants import W4AF_ICON
 from w4af.core.ui.gui.user_help.open_help import open_help
 
 from w4af.core.data.parsers.doc.url import URL
@@ -656,7 +656,7 @@ class RememberingWindow(gtk.Window):
     """
     def __init__(self, w4af, idstring, title, helpid='', onDestroy=None, guessResize=True):
         super(RememberingWindow, self).__init__(gtk.WINDOW_TOPLEVEL)
-        self.set_icon_from_file(W3AF_ICON)
+        self.set_icon_from_file(W4AF_ICON)
         self.onDestroy = onDestroy
         self.helpid = helpid
 

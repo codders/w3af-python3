@@ -3,7 +3,7 @@ history.py
 
 Copyright 2009 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -168,6 +168,11 @@ class HistoryItem(object):
 
     request = property(get_request, set_request)
     
+    @verify_has_db
+    def count(self):
+        for row in self._db.select("SELECT COUNT(id) FROM " + self._DATA_TABLE):
+            return row[0]
+
     @verify_has_db
     def find(self, search_data, result_limit=-1, order_data=None):
         """
@@ -727,6 +732,7 @@ class HistoryItem(object):
             self._db.clear_table(self.get_table_name()).result()
             
         self._db = None
+        HistoryItem._latest_compression_job_end = 0
         
         # It might be the case that another thread removes the session dir
         # at the same time as we, so we simply ignore errors here

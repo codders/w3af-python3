@@ -3,7 +3,7 @@ main.py
 
 Copyright 2007 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -49,7 +49,7 @@ from w4af.core.ui.gui.splash import Splash
 from w4af.core.ui.gui.disclaimer import DisclaimerController
 from w4af.core.ui.gui.exception_handling import unhandled
 from w4af.core.ui.gui.exception_handling import user_reports_bug
-from w4af.core.ui.gui.constants import W3AF_ICON, MAIN_TITLE, UI_MENU
+from w4af.core.ui.gui.constants import W4AF_ICON, MAIN_TITLE, UI_MENU
 from w4af.core.ui.gui.output.gtk_output import GtkOutput
 from w4af.core.ui.gui.auto_update.gui_updater import GUIUpdater
  
@@ -118,7 +118,7 @@ class AboutDialog(gtk.Dialog):
     def _goWeb(self, w):
         """Opens the web site and closes the dialog."""
         try:
-            webbrowser.open("http://w4af.org/")
+            webbrowser.open("https://w4af.readthedocs.io/")
         except Exception:
             #
             #   This catches bug #2685576
@@ -197,7 +197,7 @@ class MainApp(object):
 
         # Create a new window
         self.window = gtk.Window(gtk.WindowType.TOPLEVEL)
-        self.window.set_icon_from_file(W3AF_ICON)
+        self.window.set_icon_from_file(W4AF_ICON)
         self.window.connect("delete_event", self.quit)
         self.window.connect('key_press_event', self.help_f1)
         

@@ -3,7 +3,7 @@ websocket_hijacking.py
 
 Copyright 2015 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -35,8 +35,8 @@ class websocket_hijacking(AuditPlugin):
     Detect Cross-Site WebSocket hijacking vulnerabilities.
     :author: Dmitry Roshchin (nixwizard@gmail.com)
     """
-    W3AF_DOMAIN = 'w4af.org'
-    W3AF_ORIGIN = 'http://www.w4af.org/'
+    W4AF_DOMAIN = 'w4af.org'
+    W4AF_ORIGIN = 'http://www.w4af.org/'
 
     def __init__(self):
         super(websocket_hijacking, self).__init__()
@@ -123,7 +123,7 @@ class websocket_hijacking(AuditPlugin):
         """
         upgrade_request = build_ws_upgrade_request(web_socket_url,
                                                    web_socket_version=web_socket_version,
-                                                   origin=self.W3AF_ORIGIN)
+                                                   origin=self.W4AF_ORIGIN)
         upgrade_response = self._uri_opener.send_mutant(upgrade_request,
                                                         cookies=False,
                                                         use_basic_auth=False)
@@ -163,7 +163,7 @@ class websocket_hijacking(AuditPlugin):
         #
         # This is the trick:
         origin_domain = web_socket_url.get_domain()
-        origin_domain += '.%s' % self.W3AF_DOMAIN
+        origin_domain += '.%s' % self.W4AF_DOMAIN
 
         for scheme in {'http', 'https'}:
             origin = '%s://%s' % (scheme, origin_domain)
@@ -262,7 +262,7 @@ class websocket_hijacking(AuditPlugin):
         #
         upgrade_request = build_ws_upgrade_request(web_socket_url,
                                                    web_socket_version=web_socket_version,
-                                                   origin=self.W3AF_ORIGIN)
+                                                   origin=self.W4AF_ORIGIN)
         upgrade_response = self._uri_opener.send_mutant(upgrade_request,
                                                         cookies=False,
                                                         # Note the True here!
@@ -305,7 +305,7 @@ class websocket_hijacking(AuditPlugin):
         #
         upgrade_request = build_ws_upgrade_request(web_socket_url,
                                                    web_socket_version=web_socket_version,
-                                                   origin=self.W3AF_ORIGIN)
+                                                   origin=self.W4AF_ORIGIN)
         upgrade_response = self._uri_opener.send_mutant(upgrade_request,
                                                         # Note the True here!
                                                         cookies=True,

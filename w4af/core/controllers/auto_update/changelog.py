@@ -3,7 +3,7 @@ changelog.py
 
 Copyright 2013 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 """
 import git
 
-from w4af.core.controllers.misc.home_dir import W3AF_LOCAL_PATH
+from w4af.core.controllers.misc.home_dir import W4AF_LOCAL_PATH
 
 ACTIONS = {'Added': 'A',
            'Deleted': 'D',
@@ -100,7 +100,7 @@ class ChangeLog(object):
         
         crange = '%s..%s' % (self.start, self.end)
         
-        for git_commit in git.Repo(W3AF_LOCAL_PATH).iter_commits(crange):
+        for git_commit in git.Repo(W4AF_LOCAL_PATH).iter_commits(crange):
             commit = Commit(git_commit)
             
             diff = git_commit.parents[0].diff(git_commit)

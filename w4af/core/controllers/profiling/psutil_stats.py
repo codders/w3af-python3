@@ -3,7 +3,7 @@ psutil_stats.py
 
 Copyright 2015 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -33,7 +33,7 @@ SAVE_PSUTIL_PTR = []
 
 
 def user_wants_psutil():
-    _should_profile = os.environ.get('W3AF_PSUTILS', '0')
+    _should_profile = os.environ.get('W4AF_PSUTILS', '0')
 
     if _should_profile.isdigit() and int(_should_profile) == 1:
         return True
@@ -61,7 +61,7 @@ def should_dump_psutil(wrapped):
 @should_dump_psutil
 def start_psutil_dump():
     """
-    If the environment variable W3AF_PSUTILS is set to 1, then we start
+    If the environment variable W4AF_PSUTILS is set to 1, then we start
     the thread that will dump the operating system data which can be retrieved
     using psutil module.
 

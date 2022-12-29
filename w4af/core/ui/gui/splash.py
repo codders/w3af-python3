@@ -3,7 +3,7 @@ splash.py
 
 Copyright 2007 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -23,7 +23,7 @@ import os
 from gi.repository import Gtk as gtk
 from gi.repository import Gdk as gdk
 
-from w4af.core.ui.gui.constants import W3AF_ICON
+from w4af.core.ui.gui.constants import W4AF_ICON
 from w4af.core.controllers.dependency_check.platforms.mac import MacOSX
 from w4af import ROOT_PATH
 
@@ -38,7 +38,7 @@ class Splash(gtk.Window):
 
         # These two lines are required here to make sure that unity shows the
         # correct information in the menu
-        self.set_icon_from_file(W3AF_ICON)
+        self.set_icon_from_file(W4AF_ICON)
         self.set_title('w4af - 0wn the Web')
 
         vbox = gtk.VBox()

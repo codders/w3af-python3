@@ -3,7 +3,7 @@ helpers.py
 
 Copyright 2007 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -32,7 +32,7 @@ import os
 
 from w4af.core.ui.gui import GUI_DATA_PATH
 from w4af.core.controllers.exceptions import BaseFrameworkException
-from w4af.core.ui.gui.constants import W3AF_ICON
+from w4af.core.ui.gui.constants import W4AF_ICON
 
 
 class PropagateBuffer(object):
@@ -181,7 +181,7 @@ def FriendlyExceptionDlg(message):
 
     dlg = w4af_message_dialog(None, gtk.DIALOG_MODAL, gtk.MESSAGE_WARNING,
                               gtk.BUTTONS_OK, message)
-    dlg.set_icon_from_file(W3AF_ICON)
+    dlg.set_icon_from_file(W4AF_ICON)
     dlg.set_title('Error')
     dlg.dialog_run()
     return

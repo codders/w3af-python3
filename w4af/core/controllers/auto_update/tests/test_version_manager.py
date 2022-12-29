@@ -3,7 +3,7 @@ test_version_manager.py
 
 Copyright 2011 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -28,7 +28,7 @@ from unittest.mock import MagicMock
 from w4af.core.data.db.startup_cfg import StartUpConfig
 from w4af.core.controllers.auto_update.version_manager import VersionMgr
 from w4af.core.controllers.auto_update.changelog import ChangeLog
-from w4af.core.controllers.misc.home_dir import W3AF_LOCAL_PATH
+from w4af.core.controllers.misc.home_dir import W4AF_LOCAL_PATH
 from w4af.core.controllers.auto_update.git_client import GitClient
 
 @pytest.mark.git
@@ -46,7 +46,7 @@ class TestVersionMgr(unittest.TestCase):
         I haven't been able to fix this issue... so I'm skipping these two
         tests!
         """
-        self.vmgr = VersionMgr(W3AF_LOCAL_PATH, MagicMock(return_value=None))
+        self.vmgr = VersionMgr(W4AF_LOCAL_PATH, MagicMock(return_value=None))
 
     def test_no_need_update(self):
         vmgr = self.vmgr
@@ -207,5 +207,5 @@ class TestVersionMgr(unittest.TestCase):
             git_client.pull()
 
     def test_no_cycle_refs(self):
-        vmgr = VersionMgr(W3AF_LOCAL_PATH, MagicMock(return_value=None))
+        vmgr = VersionMgr(W4AF_LOCAL_PATH, MagicMock(return_value=None))
         self.assertEqual(len(gc.get_referrers(vmgr)), 1)

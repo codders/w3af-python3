@@ -3,7 +3,7 @@ memory_usage.py
 
 Copyright 2012 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -30,7 +30,7 @@ SAVE_THREAD_PTR = []
 
 
 def user_wants_memory_profiling():
-    _should_profile = os.environ.get('W3AF_MEMORY_PROFILING', '0')
+    _should_profile = os.environ.get('W4AF_MEMORY_PROFILING', '0')
 
     if _should_profile.isdigit() and int(_should_profile) == 1:
         return True
@@ -49,7 +49,7 @@ def should_profile_memory(wrapped):
 @should_profile_memory
 def start_memory_profiling():
     """
-    If the environment variable W3AF_PROFILING is set to 1, then we start
+    If the environment variable W4AF_PROFILING is set to 1, then we start
     the CPU and memory profiling.
 
     :return: None

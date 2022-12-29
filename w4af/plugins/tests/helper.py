@@ -3,7 +3,7 @@ helper.py
 
 Copyright 2012 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@ import w4af.core.data.kb.knowledge_base as kb
 import w4af.core.controllers.output_manager as om
 
 from w4af.core.controllers.w4afCore import w4afCore
-from w4af.core.controllers.misc.home_dir import W3AF_LOCAL_PATH
+from w4af.core.controllers.misc.home_dir import W4AF_LOCAL_PATH
 from w4af.core.controllers.misc.decorators import retry
 from w4af.core.controllers.misc_settings import MiscSettings
 from w4af.core.data.fuzzer.utils import rand_alnum
@@ -49,7 +49,7 @@ from w4af.core.data.kb.info_set import InfoSet
 from w4af.core.data.misc.encoding import smart_str
 
 
-os.chdir(W3AF_LOCAL_PATH)
+os.chdir(W4AF_LOCAL_PATH)
 RE_COMPILE_TYPE = type(re.compile(''))
 
 

@@ -3,7 +3,7 @@ thread_activity.py
 
 Copyright 2014 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -35,7 +35,7 @@ SAVE_THREAD_PTR = []
 
 def should_dump_thread_stack(wrapped):
     def inner():
-        _should_profile = os.environ.get('W3AF_THREAD_ACTIVITY', '0')
+        _should_profile = os.environ.get('W4AF_THREAD_ACTIVITY', '0')
 
         if _should_profile.isdigit() and int(_should_profile) == 1:
             return wrapped()
@@ -46,7 +46,7 @@ def should_dump_thread_stack(wrapped):
 @should_dump_thread_stack
 def start_thread_stack_dump():
     """
-    If the environment variable W3AF_THREAD_ACTIVITY is set to 1, then we start
+    If the environment variable W4AF_THREAD_ACTIVITY is set to 1, then we start
     the thread that will dump the current line being executed of every thread
     in the w4af process to a file.
 

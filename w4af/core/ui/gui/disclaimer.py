@@ -3,7 +3,7 @@ main.py
 
 Copyright 2007 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 """
 from gi.repository import Gtk as gtk
 
-from w4af.core.ui.gui.constants import W3AF_ICON
+from w4af.core.ui.gui.constants import W4AF_ICON
 from w4af.core.data.db.startup_cfg import StartUpConfig
 from w4af.core.data.constants.disclaimer import DISCLAIMER
 
@@ -29,7 +29,7 @@ from w4af.core.data.constants.disclaimer import DISCLAIMER
 def ask(msg):
     dlg = gtk.MessageDialog(None, gtk.DIALOG_MODAL,
                             gtk.MESSAGE_QUESTION, gtk.BUTTONS_YES_NO, msg)
-    dlg.set_icon_from_file(W3AF_ICON)
+    dlg.set_icon_from_file(W4AF_ICON)
     opt = dlg.run()
     dlg.destroy()
     return opt == gtk.RESPONSE_YES

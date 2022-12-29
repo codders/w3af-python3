@@ -4,7 +4,7 @@ test_info_set.py
 
 Copyright 2015 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -197,24 +197,24 @@ class TestInfoSet(unittest.TestCase):
 
     def test_get_desc_urls(self):
         i1 = MockInfo()
-        i1.set_url(URL('http://w4af.org/1'))
+        i1.set_url(URL('https://w4af.readthedocs.io/1'))
 
         i2 = MockInfo()
-        i2.set_url(URL('http://w4af.org/2'))
+        i2.set_url(URL('https://w4af.readthedocs.io/2'))
 
         tiset = TemplatedInfoSetPrintUri([i1, i2])
-        expected = ' - http://w4af.org/1\n - http://w4af.org/2\n'
+        expected = ' - https://w4af.readthedocs.io/1\n - https://w4af.readthedocs.io/2\n'
         self.assertEqual(tiset.get_desc(), expected)
 
     def test_get_desc_template_special_chars_unicode(self):
         i1 = MockInfo()
-        i1.set_url(URL('http://w4af.org/1'))
+        i1.set_url(URL('https://w4af.readthedocs.io/1'))
 
         i2 = MockInfo()
-        i2.set_url(URL(b'http://w4af.org/2\xc3\xb6'))
+        i2.set_url(URL(b'https://w4af.readthedocs.io/2\xc3\xb6'))
 
         tiset = TemplatedInfoSetPrintUri([i1, i2])
-        expected = [ "http://w4af.org/1", "http://w4af.org/2ö" ]
+        expected = [ "https://w4af.readthedocs.io/1", "https://w4af.readthedocs.io/2ö" ]
         for url in expected:
             self.assertIn(url, tiset.get_desc())
 

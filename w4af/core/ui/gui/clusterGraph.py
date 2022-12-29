@@ -3,7 +3,7 @@ clusterGraph.py
 
 Copyright 2008 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -29,7 +29,7 @@ import xdot
 from w4af.core.controllers.misc.fuzzy_string_cmp import relative_distance
 from w4af.core.controllers.exceptions import BaseFrameworkException
 
-from w4af.core.ui.gui.constants import W3AF_ICON
+from w4af.core.ui.gui.constants import W4AF_ICON
 from w4af.core.ui.gui.reqResViewer import reqResWindow
 from w4af.core.ui.gui import entries
 
@@ -218,7 +218,7 @@ class w4afDotWindow(xdot.DotWindow):
 
     def __init__(self):
         gtk.Window.__init__(self)
-        self.set_icon_from_file(W3AF_ICON)
+        self.set_icon_from_file(W4AF_ICON)
 
         self.graph = xdot.ui.elements.Graph()
 

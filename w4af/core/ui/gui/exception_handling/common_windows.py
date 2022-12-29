@@ -3,7 +3,7 @@ common_windows_report.py
 
 Copyright 2012 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ import threading
 
 from w4af.core.ui.gui.helpers import end_threads, Throbber
 from w4af.core.ui.gui.entries import EmailEntry
-from w4af.core.ui.gui.constants import W3AF_ICON
+from w4af.core.ui.gui.constants import W4AF_ICON
 from w4af.core.controllers.easy_contribution.github_issues import (GithubIssues,
                                                                    OAUTH_TOKEN,
                                                                    LoginFailed,
@@ -46,7 +46,7 @@ class SimpleBaseWindow(gtk.Window):
         self.connect("delete-event", self._handle_cancel)
         self.connect("destroy", self._handle_cancel)
 
-        self.set_icon_from_file(W3AF_ICON)
+        self.set_icon_from_file(W4AF_ICON)
 
     def _handle_cancel(self, *args):
         end_threads()
@@ -111,7 +111,7 @@ class report_bug_show_result(gtk.MessageDialog):
         self.reported_ids = []
 
         self.set_title('Bug report results')
-        self.set_icon_from_file(W3AF_ICON)
+        self.set_icon_from_file(W4AF_ICON)
 
         # Disable OK button until the worker finishes the bug reporting process
         self.ok_button = self.get_widget_for_response(gtk.RESPONSE_OK)
@@ -263,7 +263,7 @@ class dlg_ask_credentials(gtk.MessageDialog):
 
         self._invalid_login = invalid_login
 
-        self.set_icon_from_file(W3AF_ICON)
+        self.set_icon_from_file(W4AF_ICON)
         self.set_title('Bug report method - Step 1/2')
 
     def run(self):
@@ -440,7 +440,7 @@ def dlg_invalid_token(parent):
                            gtk.BUTTONS_OK,
                            OAUTH_AUTH_FAILED)
 
-    md.set_icon_from_file(W3AF_ICON)
+    md.set_icon_from_file(W4AF_ICON)
     md.set_title('GitHub authentication failed')
     return md
 
@@ -460,7 +460,7 @@ class dlg_ask_bug_info(gtk.MessageDialog):
                                    gtk.BUTTONS_OK,
                                    None)
 
-        self.set_icon_from_file(W3AF_ICON)
+        self.set_icon_from_file(W4AF_ICON)
         self.set_title('Bug information - Step 2/2')
 
     def run(self):

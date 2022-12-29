@@ -4,7 +4,7 @@ test_cache.py
 
 Copyright 2012 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -98,7 +98,7 @@ class CacheIntegrationTest(unittest.TestCase):
         settings.build_openers()
         opener = settings.get_custom_opener()
 
-        url = URL('http://w4af.org/foo-bar-not-exists.htm')
+        url = URL('https://w4af.readthedocs.io/foo-bar-not-exists.htm')
         request = HTTPRequest(url, cache=False)
 
         with patch('w4af.core.data.url.handlers.cache.CacheClass') as cc_mock:

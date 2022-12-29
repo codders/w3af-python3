@@ -3,7 +3,7 @@ constants.py
 
 Copyright 2012 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -24,7 +24,7 @@ import os
 from w4af.core.ui.gui import GUI_DATA_PATH
 
 
-W3AF_ICON = os.path.join(GUI_DATA_PATH, 'w4af_icon.png')
+W4AF_ICON = os.path.join(GUI_DATA_PATH, 'w4af_icon.png')
 
 MAIN_TITLE = "w4af - Web Application Attack and Audit Framework"
 

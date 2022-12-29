@@ -3,7 +3,7 @@ w4af_moth.py
 
 Copyright 2015 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -20,16 +20,16 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 
 """
 
-HTTP_W3AF_MOTH = '/tmp/w4af-moth.txt'
-DEFAULT_W3AF_MOTH = 'w4af-moth-fallback:80'
+HTTP_W4AF_MOTH = '/tmp/w4af-moth.txt'
+DEFAULT_W4AF_MOTH = 'w4af-moth-fallback:80'
 
 
 def get_w4af_moth_http(path='/'):
     try:
-        with open(HTTP_W3AF_MOTH) as f:
+        with open(HTTP_W4AF_MOTH) as f:
             w4af_moth_netloc = f.read().strip()
     except IOError:
-        w4af_moth_netloc = DEFAULT_W3AF_MOTH
+        w4af_moth_netloc = DEFAULT_W4AF_MOTH
     return 'http://%s%s' % (w4af_moth_netloc, path)
 
 

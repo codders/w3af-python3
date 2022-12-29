@@ -3,7 +3,7 @@ test_global_redirect.py
 
 Copyright 2012 Andres Riancho
 
-This file is part of w4af, http://w4af.org/ .
+This file is part of w4af, https://w4af.readthedocs.io/ .
 
 w4af is free software; you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -184,7 +184,7 @@ class TestGlobalRedirectUnitJSRedirect(TestCase):
     def test_javascript_redirect_simple(self):
         plugin = global_redirect()
 
-        body = '<script>window.location = "http://w4af.org/"</script>'
+        body = '<script>window.location = "https://w4af.readthedocs.io/"</script>'
         url = URL('http://www.w4af.com/')
         headers = Headers([('content-type', 'text/html')])
         resp = HTTPResponse(200, body, headers, url, url, _id=1)
@@ -208,7 +208,7 @@ class TestGlobalRedirectUnitResponseHasRedirect(TestCase):
 
         body = ''
         url = URL('http://www.w4af.com/')
-        headers = Headers([('content-type', 'text/html'), ('Location',  'http://w4af.org')])
+        headers = Headers([('content-type', 'text/html'), ('Location',  'https://w4af.readthedocs.io/')])
         resp = HTTPResponse(200, body, headers, url, url, _id=1)
 
         self.assertTrue(plugin._response_has_redirect(resp))
