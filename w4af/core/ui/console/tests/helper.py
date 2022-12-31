@@ -26,6 +26,7 @@ import unittest
 from unittest.mock import MagicMock
 
 import w4af.core.data.kb.knowledge_base as kb
+from w4af.core.data.db.dbms import DMBSException
 
 
 class mock_stdout(object):
@@ -53,7 +54,7 @@ class ConsoleTestHelper(unittest.TestCase):
     OUTPUT_HTTP_FILE = 'output-w4af-unittest-http.txt'
 
     def setUp(self):
-        kb.kb.cleanup()
+        kb.kb.cleanup(ignore_errors=True)
         self.mock_sys()
 
     def tearDown(self):
